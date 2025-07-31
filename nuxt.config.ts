@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { fileURLToPath } from 'url'
-import { dirname, resolve } from 'path'
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -14,4 +14,5 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/smart-bundles/",
   },
+  ssr: false,
 });
