@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     "@": "./",
   },
   modules: ["@pinia/nuxt"],
-  app: {
-    baseURL: "smart-bundles",
+   app: {
+    baseURL: 'smart-bundles',
   },
 });
