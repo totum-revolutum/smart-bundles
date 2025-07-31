@@ -1,18 +1,26 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
+import { dirname } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-07-15",
+  ssr: false, // GitHub Pages — тільки для SPA/статичних сайтів
   devtools: { enabled: true },
   alias: {
-    "@": resolve(__dirname, "./"),
+    "@": __dirname,
   },
   modules: ["@pinia/nuxt"],
+
+  // ВАЖЛИВО: базовий шлях
   app: {
     baseURL: "/smart-bundles/",
   },
-  ssr: false,
+
+  // Правильний пресет для GH Pages
+  nitro: {
+    preset: "github-pages",
+    prerender: {
+      crawlLinks: true,
+    },
+  },
 });
